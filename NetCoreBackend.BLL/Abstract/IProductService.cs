@@ -1,17 +1,16 @@
-﻿using NetCoreBackend.Entities.Concrete;
-using System;
+﻿using NetCoreBackend.Core.Utilities.Results;
+using NetCoreBackend.Entities.Concrete;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NetCoreBackend.BLL.Abstract
 {
     public interface IProductService
     {
-        Product GetById(int productId);
-        List<Product> GetList();
-        List<Product> GetListByCategory(int categoryId);
-        Product Add(Product product);
-        Product Delete(Product product);
-        Product Update(Product product);
+        IDataResult<Product> GetById(int productId);
+        IDataResult<List<Product>> GetList();
+        IDataResult<List<Product>> GetListByCategory(int categoryId);
+        IDataResult<Product> Add(Product product);
+        IResult Delete(Product product);
+        IResult Update(Product product);
     }
 }

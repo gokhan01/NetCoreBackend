@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace NetCoreBackend.Core.DAL.EntityFramework
 {
@@ -23,14 +22,13 @@ namespace NetCoreBackend.Core.DAL.EntityFramework
             }
         }
 
-        public TEntity Delete(TEntity entity)
+        public void Delete(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
                 context.SaveChanges();
-                return deletedEntity.Entity;
             }
         }
 
@@ -52,14 +50,13 @@ namespace NetCoreBackend.Core.DAL.EntityFramework
             }
         }
 
-        public TEntity Update(TEntity entity)
+        public void Update(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
                 context.SaveChanges();
-                return updatedEntity.Entity;
             }
         }
     }

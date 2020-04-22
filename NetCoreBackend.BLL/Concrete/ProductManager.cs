@@ -1,7 +1,7 @@
 ﻿using NetCoreBackend.BLL.Abstract;
+using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.Entities.Concrete;
-using System;
 using System.Collections.Generic;
 
 namespace NetCoreBackend.BLL.Concrete
@@ -14,34 +14,36 @@ namespace NetCoreBackend.BLL.Concrete
             _productDal = productDal;
         }
 
-        public Product Add(Product product)
+        public IDataResult<Product> Add(Product product)
         {
-            return _productDal.Add(product);
+            return new SuccessDataResult<Product>(_productDal.Add(product));
         }
 
-        public Product Delete(Product product)
+        public IResult Delete(Product product)
         {
-            return _productDal.Delete(product);
+            _productDal.Delete(product);
+            return new SuccessResult("Başarılı");
         }
 
-        public Product GetById(int productId)
+        public IDataResult<Product> GetById(int productId)
         {
-            return _productDal.Get(x => x.ProductId == productId);
+            return new SuccessDataResult<Product>(_productDal.Get(x => x.ProductId == productId));
         }
 
-        public List<Product> GetList()
+        public IDataResult<List<Product>> GetList()
         {
-            return _productDal.GetList();
+            return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }
 
-        public List<Product> GetListByCategory(int categoryId)
+        public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
-            return _productDal.GetList(x => x.CategoryID == categoryId);
+            return new SuccessDataResult<List<Product>>(_productDal.GetList(x => x.CategoryID == categoryId));
         }
 
-        public Product Update(Product product)
+        public IResult Update(Product product)
         {
-            return _productDal.Update(product);
+            _productDal.Update(product);
+            return new SuccessResult("Başarılı");
         }
     }
 }

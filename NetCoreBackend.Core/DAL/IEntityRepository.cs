@@ -11,7 +11,7 @@ namespace NetCoreBackend.Core.DAL
         T Get(Expression<Func<T, bool>> expression);
         List<T> GetList(Expression<Func<T, bool>> expression = null);
         T Add(T entity);
-        T Update(T entity);
-        T Delete(T entity);
+        void Update(T entity);
+        void Delete(T entity);
     }
 }
