@@ -2,7 +2,7 @@
 {
     public static class Messages
     {
-        public static string ProductUpdated = "Güncellendi";
-        public static string ProductDeleted = "Silindi";
+        public static string Updated = "Güncellendi";
+        public static string Deleted = "Silindi";
     }
 }

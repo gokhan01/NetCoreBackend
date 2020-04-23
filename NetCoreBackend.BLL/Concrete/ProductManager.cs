@@ -38,13 +38,13 @@ namespace NetCoreBackend.BLL.Concrete
         public IResult Delete(Product product)
         {
             _productDal.Delete(product);
-            return new SuccessResult(Messages.ProductDeleted);
+            return new SuccessResult(Messages.Deleted);
         }        
 
         public IResult Update(Product product)
         {
             _productDal.Update(product);
-            return new SuccessResult(Messages.ProductUpdated);
+            return new SuccessResult(Messages.Updated);
         }
     }
 }
