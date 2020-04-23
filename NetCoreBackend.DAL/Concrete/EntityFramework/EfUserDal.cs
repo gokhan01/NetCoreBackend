@@ -1,11 +1,9 @@
 ﻿using NetCoreBackend.Core.DAL.EntityFramework;
+using NetCoreBackend.Core.Entities.Concrete;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.DAL.Concrete.EntityFramework.Contexts;
-using NetCoreBackend.Entities.Concrete;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace NetCoreBackend.DAL.Concrete.EntityFramework
 {

@@ -1,8 +1,6 @@
 ﻿using NetCoreBackend.Core.DAL;
-using NetCoreBackend.Entities.Concrete;
-using System;
+using NetCoreBackend.Core.Entities.Concrete;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NetCoreBackend.DAL.Abstract
 {

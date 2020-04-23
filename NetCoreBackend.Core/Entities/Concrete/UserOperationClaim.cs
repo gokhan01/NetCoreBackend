@@ -1,6 +1,4 @@
-﻿using NetCoreBackend.Core.Entities;
-
-namespace NetCoreBackend.Entities.Concrete
+﻿namespace NetCoreBackend.Core.Entities.Concrete
 {
     public class UserOperationClaim : IEntity
     {

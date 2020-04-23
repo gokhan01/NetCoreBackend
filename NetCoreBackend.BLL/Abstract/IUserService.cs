@@ -1,5 +1,5 @@
-﻿using NetCoreBackend.Core.Utilities.Results;
-using NetCoreBackend.Entities.Concrete;
+﻿using NetCoreBackend.Core.Entities.Concrete;
+using NetCoreBackend.Core.Utilities.Results;
 using System.Collections.Generic;
 
 namespace NetCoreBackend.BLL.Abstract

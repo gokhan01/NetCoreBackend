@@ -1,10 +1,8 @@
 ﻿using NetCoreBackend.BLL.Abstract;
+using NetCoreBackend.Core.Entities.Concrete;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
-using NetCoreBackend.Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NetCoreBackend.BLL.Concrete
 {

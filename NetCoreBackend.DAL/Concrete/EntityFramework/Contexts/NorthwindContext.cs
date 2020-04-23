@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NetCoreBackend.Core.Entities.Concrete;
 using NetCoreBackend.Entities.Concrete;
 
 namespace NetCoreBackend.DAL.Concrete.EntityFramework.Contexts
