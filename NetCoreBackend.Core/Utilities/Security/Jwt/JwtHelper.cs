@@ -39,7 +39,7 @@ namespace NetCoreBackend.Core.Utilities.Security.Jwt
             };
         }
 
-        public JwtSecurityToken CreateJwtSecurityToken(
+        private JwtSecurityToken CreateJwtSecurityToken(
             TokenOptions tokenOptions,
             User user,
             SigningCredentials signingCredentials,
