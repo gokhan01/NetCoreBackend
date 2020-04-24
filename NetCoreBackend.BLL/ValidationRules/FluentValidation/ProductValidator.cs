@@ -1,8 +1,5 @@
 ﻿using FluentValidation;
 using NetCoreBackend.Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NetCoreBackend.BLL.ValidationRules.FluentValidation
 {

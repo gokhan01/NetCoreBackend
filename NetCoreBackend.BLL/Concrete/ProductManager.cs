@@ -1,5 +1,7 @@
 ﻿using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.BLL.Constants;
+using NetCoreBackend.BLL.ValidationRules.FluentValidation;
+using NetCoreBackend.Core.CrossCuttingConcerns.Validation;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.Entities.Concrete;
@@ -30,6 +32,7 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList(x => x.CategoryID == categoryId));
         }
 
+        //[ValidationAspect(typeof(ProductValidator))]
         public IDataResult<Product> Add(Product product)
         {
             return new SuccessDataResult<Product>(_productDal.Add(product));
@@ -39,7 +42,7 @@ namespace NetCoreBackend.BLL.Concrete
         {
             _productDal.Delete(product);
             return new SuccessResult(Messages.Deleted);
-        }        
+        }
 
         public IResult Update(Product product)
         {
