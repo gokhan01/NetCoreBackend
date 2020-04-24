@@ -20,8 +20,8 @@ namespace NetCoreBackend.WebAPI.Controllers
             _productService = productService;
         }
 
-        [Authorize]
         [HttpGet("getall")]
+        [Authorize(Roles = "Product.List")]
         public IActionResult GetList()
         {
             var result = _productService.GetList();
