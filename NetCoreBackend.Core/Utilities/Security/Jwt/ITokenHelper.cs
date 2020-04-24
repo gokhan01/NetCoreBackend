@@ -1,11 +1,10 @@
-﻿using System;
+﻿using NetCoreBackend.Core.Entities.Concrete;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NetCoreBackend.Core.Utilities.Security.Jwt
 {
     public interface ITokenHelper
     {
-        //AccessToken CreateToken(User user);
+        AccessToken CreateToken(User user, List<OperationClaim> operationClaims);
     }
 }
