@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.BLL.Concrete;
+using NetCoreBackend.Core.Utilities.Security.Jwt;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.DAL.Concrete.EntityFramework;
 
@@ -18,6 +19,9 @@ namespace NetCoreBackend.BLL.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
         }
     }
 }
