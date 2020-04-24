@@ -1,11 +1,14 @@
-﻿using NetCoreBackend.Core.Entities.Concrete;
-
-namespace NetCoreBackend.BLL.Constants
+﻿namespace NetCoreBackend.BLL.Constants
 {
-    public static class Messages
+    internal static class Messages
     {
-        public static string Updated = "Güncellendi";
-        public static string Deleted = "Silindi";
-        public static string UserNotFound = "Kullanıcı bulunamadı";
+        internal static string Updated = "Güncellendi";
+        internal static string Deleted = "Silindi";
+        internal static string UserNotFound = "Kullanıcı bulunamadı";
+        internal static string PasswordError = "Şifre hatalı";
+        internal static string SuccessfulLogin = "Sisteme giriş başarılı";
+        internal static string UserAlreadyExists = "Bu kullanıcı zaten mevcut";
+        internal static string UserRegistered = "Kullanıcı başarıyla kaydedildi";
+        internal static string AccessTokenCreated = "Access Token oluşturuldu";
     }
 }
