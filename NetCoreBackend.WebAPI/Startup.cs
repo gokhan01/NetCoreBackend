@@ -70,9 +70,9 @@ namespace NetCoreBackend.WebAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();//login(eklendi)
 
-            app.UseAuthentication();//eklendi
+            app.UseAuthorization();//role
 
             app.UseEndpoints(endpoints =>
             {

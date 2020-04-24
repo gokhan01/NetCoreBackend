@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreBackend.BLL.Abstract;
@@ -19,6 +20,7 @@ namespace NetCoreBackend.WebAPI.Controllers
             _productService = productService;
         }
 
+        [Authorize]
         [HttpGet("getall")]
         public IActionResult GetList()
         {
