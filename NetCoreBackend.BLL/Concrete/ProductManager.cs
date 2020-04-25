@@ -1,6 +1,7 @@
 ﻿using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
+using NetCoreBackend.Core.Aspects.Autofac.Caching;
 using NetCoreBackend.Core.Aspects.Autofac.Transaction;
 using NetCoreBackend.Core.Aspects.Validation;
 using NetCoreBackend.Core.CrossCuttingConcerns.Validation;
@@ -29,12 +30,15 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }
 
+        [CacheAspect(duration: 10)]
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetList(x => x.CategoryID == categoryId));
         }
 
         [ValidationAspect(typeof(ProductValidator), Priority = 1)]
+        [CacheRemoveAspect("IProductService.Get")]
+        [CacheRemoveAspect("ICategoryService.Get")]
         public IResult Add(Product product)
         {
             _productDal.Add(product);
@@ -54,7 +58,7 @@ namespace NetCoreBackend.BLL.Concrete
         }
 
         [TransactionScopeAspect]
-        public IResult TransactionalOperation(Product product)//Test
+        public IResult TransactionalOperation(Product product)//Transaction Test
         {
             _productDal.Update(product);
             //_productDal.Add(product);
