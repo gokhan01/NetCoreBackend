@@ -8,7 +8,7 @@ namespace NetCoreBackend.BLL.Abstract
     {
         IDataResult<Category> GetById(int categoryId);
         IDataResult<List<Category>> GetList();
-        IDataResult<Category> Add(Category category);
+        IResult Add(Category category);
         IResult Delete(Category category);
         IResult Update(Category category);
     }

@@ -58,7 +58,7 @@ namespace NetCoreBackend.WebAPI.Controllers
             var result = _productService.Add(product);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result.Message);
             }
 
             return BadRequest(result.Message);
@@ -80,6 +80,19 @@ namespace NetCoreBackend.WebAPI.Controllers
         public IActionResult Delete(Product product)
         {
             var result = _productService.Update(product);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+
+            return BadRequest(result.Message);
+        }
+
+
+        [HttpPost("transaction")]
+        public IActionResult TransactionTest(Product product)
+        {
+            var result = _productService.TransactionalOperation(product);
             if (result.Success)
             {
                 return Ok(result.Message);

@@ -46,7 +46,7 @@ namespace NetCoreBackend.BLL.Concrete
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
 
-            var dataResult = _userService.Add(new User
+            var user = new User
             {
                 Email = userForRegisterDto.Email,
                 FirstName = userForRegisterDto.FirstName,
@@ -54,8 +54,10 @@ namespace NetCoreBackend.BLL.Concrete
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
                 Status = true
-            });
-            return new SuccessDataResult<User>(dataResult.Data, Messages.UserRegistered);
+            };
+
+            var result = _userService.Add(user);
+            return new SuccessDataResult<User>(user, Messages.UserRegistered);
         }
 
         public IResult UserExists(string email)

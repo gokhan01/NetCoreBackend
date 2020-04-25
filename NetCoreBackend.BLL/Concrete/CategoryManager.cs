@@ -14,9 +14,10 @@ namespace NetCoreBackend.BLL.Concrete
         {
             _categoryDal = categoryDal;
         }
-        public IDataResult<Category> Add(Category category)
+        public IResult Add(Category category)
         {
-            return new SuccessDataResult<Category>(_categoryDal.Add(category));
+            _categoryDal.Add(category);
+            return new SuccessResult(Messages.Added);
         }
 
         public IResult Delete(Category category)

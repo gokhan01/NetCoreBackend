@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace NetCoreBackend.Core.DAL
 {
@@ -10,7 +9,7 @@ namespace NetCoreBackend.Core.DAL
     {
         T Get(Expression<Func<T, bool>> expression);
         List<T> GetList(Expression<Func<T, bool>> expression = null);
-        T Add(T entity);
+        void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
     }

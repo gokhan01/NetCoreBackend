@@ -44,7 +44,7 @@ namespace NetCoreBackend.WebAPI.Controllers
             var result = _categoryService.Add(product);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result.Message);
             }
 
             return BadRequest(result.Message);

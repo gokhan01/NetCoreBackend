@@ -2,6 +2,7 @@
 {
     internal static class Messages
     {
+        internal static string Added = "Kaydedildi";
         internal static string Updated = "Güncellendi";
         internal static string Deleted = "Silindi";
         internal static string UserNotFound = "Kullanıcı bulunamadı";

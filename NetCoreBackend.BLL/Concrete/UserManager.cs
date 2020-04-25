@@ -1,4 +1,5 @@
 ﻿using NetCoreBackend.BLL.Abstract;
+using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.Core.Entities.Concrete;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
@@ -14,9 +15,10 @@ namespace NetCoreBackend.BLL.Concrete
             _userDal = userDal;
         }
 
-        IDataResult<User> IUserService.Add(User user)
+        IResult IUserService.Add(User user)
         {
-            return new SuccessDataResult<User>(_userDal.Add(user));
+            _userDal.Add(user);
+            return new SuccessResult(Messages.Added);
         }
 
         IDataResult<User> IUserService.GetByMail(string email)

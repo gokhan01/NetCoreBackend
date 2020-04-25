@@ -1,6 +1,7 @@
 ﻿using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
+using NetCoreBackend.Core.Aspects.Autofac.Transaction;
 using NetCoreBackend.Core.Aspects.Validation;
 using NetCoreBackend.Core.CrossCuttingConcerns.Validation;
 using NetCoreBackend.Core.Utilities.Results;
@@ -34,9 +35,10 @@ namespace NetCoreBackend.BLL.Concrete
         }
 
         [ValidationAspect(typeof(ProductValidator), Priority = 1)]
-        public IDataResult<Product> Add(Product product)
+        public IResult Add(Product product)
         {
-            return new SuccessDataResult<Product>(_productDal.Add(product));
+            _productDal.Add(product);
+            return new SuccessResult(Messages.Added);
         }
 
         public IResult Delete(Product product)
@@ -49,6 +51,14 @@ namespace NetCoreBackend.BLL.Concrete
         {
             _productDal.Update(product);
             return new SuccessResult(Messages.Updated);
+        }
+
+        [TransactionScopeAspect]
+        public IResult TransactionalOperation(Product product)//Test
+        {
+            _productDal.Update(product);
+            //_productDal.Add(product);
+            return new SuccessResult(Messages.Added);
         }
     }
 }
