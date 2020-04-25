@@ -8,7 +8,6 @@ using System.Linq;
 
 namespace NetCoreBackend.Core.Aspects.Validation
 {
-    //Bu sınıf Autofac ve FluentValidation'a bağımlı
     public class ValidationAspect : MethodInterception
     {
         Type _validatorType;
