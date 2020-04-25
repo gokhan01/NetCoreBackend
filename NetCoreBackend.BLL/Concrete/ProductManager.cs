@@ -1,6 +1,7 @@
 ﻿using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
+using NetCoreBackend.Core.Aspects.Validation;
 using NetCoreBackend.Core.CrossCuttingConcerns.Validation;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
@@ -32,7 +33,7 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList(x => x.CategoryID == categoryId));
         }
 
-        //[ValidationAspect(typeof(ProductValidator))]
+        [ValidationAspect(typeof(ProductValidator))]
         public IDataResult<Product> Add(Product product)
         {
             return new SuccessDataResult<Product>(_productDal.Add(product));
