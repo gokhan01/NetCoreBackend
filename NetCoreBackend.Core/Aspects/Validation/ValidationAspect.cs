@@ -35,7 +35,7 @@ namespace NetCoreBackend.Core.Aspects.Validation
 
             foreach (var item in entities)
             {
-                ValidationTool.Validate(validator, entityType);
+                ValidationTool.Validate(validator, item);
             }
         }
     }

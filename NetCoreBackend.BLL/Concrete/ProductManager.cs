@@ -33,7 +33,7 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList(x => x.CategoryID == categoryId));
         }
 
-        [ValidationAspect(typeof(ProductValidator))]
+        [ValidationAspect(typeof(ProductValidator), Priority = 1)]
         public IDataResult<Product> Add(Product product)
         {
             return new SuccessDataResult<Product>(_productDal.Add(product));
