@@ -12,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using NetCoreBackend.Core.DependencyResolvers;
+using NetCoreBackend.Core.Extensions;
+using NetCoreBackend.Core.Utilities.IoC;
 using NetCoreBackend.Core.Utilities.Security.Encryption;
 using NetCoreBackend.Core.Utilities.Security.Jwt;
 
@@ -54,6 +57,13 @@ namespace NetCoreBackend.WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+
+            //services.AddMemoryCache();
+            //Bu sýnýf içerisinde eklenebilecek herhangi bir servisin(Örnek olarak bir üst satýrda AddMemoryCache), core seviyesinde tanýmlanabilmesi için yazýlan extension.
+            services.AddDependencyResolvers(new ICoreModule[]
+            {
+                new CoreModule()
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
