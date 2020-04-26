@@ -1,4 +1,5 @@
 ﻿using NetCoreBackend.BLL.Abstract;
+using NetCoreBackend.BLL.BusinessAspects.Autofac;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
 using NetCoreBackend.Core.Aspects.Autofac.Caching;
@@ -30,6 +31,7 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }
 
+        [SecuredOperation("Product.List,Admin")]
         [CacheAspect(duration: 10)]
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {

@@ -35,7 +35,7 @@ namespace NetCoreBackend.Core.DAL.EntityFramework
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault();
+                return context.Set<TEntity>().SingleOrDefault(expression);
             }
         }
 

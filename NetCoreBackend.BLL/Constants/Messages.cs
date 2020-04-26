@@ -1,4 +1,6 @@
-﻿namespace NetCoreBackend.BLL.Constants
+﻿using System.Runtime.Serialization;
+
+namespace NetCoreBackend.BLL.Constants
 {
     internal static class Messages
     {
@@ -11,5 +13,6 @@
         internal static string UserAlreadyExists = "Bu kullanıcı zaten mevcut";
         internal static string UserRegistered = "Kullanıcı başarıyla kaydedildi";
         internal static string AccessTokenCreated = "Access Token oluşturuldu";
+        internal static string AuthorizationDenied = "Yetkiniz yok";
     }
 }
