@@ -7,7 +7,7 @@ namespace NetCoreBackend.Core.Utilities.Interceptors
     {
         protected virtual void OnBefore(IInvocation invocation) { }
         protected virtual void OnAfter(IInvocation invocation) { }
-        protected virtual void OnException(IInvocation invocation) { }
+        protected virtual void OnException(IInvocation invocation, Exception ex) { }
         protected virtual void OnSuccess(IInvocation invocation) { }
         public override void Intercept(IInvocation invocation)
         {
@@ -20,7 +20,7 @@ namespace NetCoreBackend.Core.Utilities.Interceptors
             catch (Exception ex)
             {
                 isSuccess = false;
-                OnException(invocation);
+                OnException(invocation, ex);
                 throw;
             }
             finally

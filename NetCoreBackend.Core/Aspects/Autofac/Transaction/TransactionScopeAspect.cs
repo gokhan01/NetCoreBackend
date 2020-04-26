@@ -1,6 +1,5 @@
 ﻿using Castle.DynamicProxy;
 using NetCoreBackend.Core.Utilities.Interceptors;
-using System;
 using System.Transactions;
 
 namespace NetCoreBackend.Core.Aspects.Autofac.Transaction
@@ -16,7 +15,7 @@ namespace NetCoreBackend.Core.Aspects.Autofac.Transaction
                     invocation.Proceed();
                     transactionScope.Complete();
                 }
-                catch (Exception ex)
+                catch (System.Exception ex)
                 {
                     transactionScope.Dispose();
                     throw;

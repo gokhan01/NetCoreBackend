@@ -74,6 +74,8 @@ namespace NetCoreBackend.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ConfigureCustomExceptionMiddleware();//extension
+
             app.UseCors(builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader());//eklendi
 
             app.UseHttpsRedirection();

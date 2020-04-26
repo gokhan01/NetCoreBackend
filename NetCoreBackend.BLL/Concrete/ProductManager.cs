@@ -3,9 +3,11 @@ using NetCoreBackend.BLL.BusinessAspects.Autofac;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
 using NetCoreBackend.Core.Aspects.Autofac.Caching;
+using NetCoreBackend.Core.Aspects.Autofac.Logging;
 using NetCoreBackend.Core.Aspects.Autofac.Performance;
 using NetCoreBackend.Core.Aspects.Autofac.Transaction;
 using NetCoreBackend.Core.Aspects.Validation;
+using NetCoreBackend.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.Entities.Concrete;
@@ -34,7 +36,8 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }
 
-        [SecuredOperation("Product.List,Admin")]
+        //[SecuredOperation("Product.List,Admin")]
+        [LogAspect(typeof(FileLogger))]
         [CacheAspect(duration: 10)]
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
