@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NetCoreBackend.Core.CrossCuttingConcerns.Caching;
 using NetCoreBackend.Core.CrossCuttingConcerns.Caching.Microsoft;
 using NetCoreBackend.Core.Utilities.IoC;
+using System.Diagnostics;
 
 namespace NetCoreBackend.Core.DependencyResolvers
 {
@@ -13,6 +14,7 @@ namespace NetCoreBackend.Core.DependencyResolvers
             services.AddMemoryCache();
             services.AddSingleton<ICacheManager, MemoryCacheManager>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<Stopwatch>();
         }
     }
 }

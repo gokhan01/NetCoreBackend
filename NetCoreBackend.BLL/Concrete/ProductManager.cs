@@ -3,13 +3,14 @@ using NetCoreBackend.BLL.BusinessAspects.Autofac;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
 using NetCoreBackend.Core.Aspects.Autofac.Caching;
+using NetCoreBackend.Core.Aspects.Autofac.Performance;
 using NetCoreBackend.Core.Aspects.Autofac.Transaction;
 using NetCoreBackend.Core.Aspects.Validation;
-using NetCoreBackend.Core.CrossCuttingConcerns.Validation;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.Entities.Concrete;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace NetCoreBackend.BLL.Concrete
 {
@@ -26,8 +27,10 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(x => x.ProductId == productId));
         }
 
+        [PerformanceAspect(5)]//5 sn.
         public IDataResult<List<Product>> GetList()
         {
+            Thread.Sleep(5 * 1000);
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }
 
