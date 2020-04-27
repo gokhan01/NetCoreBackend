@@ -8,6 +8,7 @@ using NetCoreBackend.Core.Aspects.Autofac.Performance;
 using NetCoreBackend.Core.Aspects.Autofac.Transaction;
 using NetCoreBackend.Core.Aspects.Validation;
 using NetCoreBackend.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using NetCoreBackend.Core.CrossCuttingConcerns.Logging.SeriLog;
 using NetCoreBackend.Core.Utilities.Results;
 using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.Entities.Concrete;
@@ -37,7 +38,7 @@ namespace NetCoreBackend.BLL.Concrete
         }
 
         //[SecuredOperation("Product.List,Admin")]
-        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(SerilogServiceBase))]
         [CacheAspect(duration: 10)]
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
