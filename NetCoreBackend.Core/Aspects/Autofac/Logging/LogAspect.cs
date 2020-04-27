@@ -15,7 +15,7 @@ namespace NetCoreBackend.Core.Aspects.Autofac.Logging
 
         public LogAspect(Type loggerService)
         {
-            if (!typeof(SerilogServiceBase).IsAssignableFrom(loggerService))
+            if (!typeof(SerilogServiceBase).BaseType.IsAssignableFrom(loggerService))
             {
                 throw new System.Exception(AspectMessages.WrongLoggerType);
             }
