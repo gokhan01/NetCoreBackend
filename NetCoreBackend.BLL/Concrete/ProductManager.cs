@@ -38,7 +38,7 @@ namespace NetCoreBackend.BLL.Concrete
         }
 
         //[SecuredOperation("Product.List,Admin")]
-        [LogAspect(typeof(SeriLogGrayLogger))]
+        [LogAspect(typeof(GrayLogLogger))]
         [CacheAspect(duration: 10)]
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {

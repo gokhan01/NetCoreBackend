@@ -3,9 +3,9 @@ using Serilog.Sinks.Graylog;
 
 namespace NetCoreBackend.Core.CrossCuttingConcerns.Logging.SeriLog.Loggers
 {
-    public class SeriLogGrayLogger : SerilogServiceBase
+    public class GrayLogLogger : SerilogServiceBase
     {
-        public SeriLogGrayLogger()
+        public GrayLogLogger()
         {
             _logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
