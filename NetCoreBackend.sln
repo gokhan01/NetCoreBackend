@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.BLL", "NetCoreBackend.BLL\NetCoreBackend.BLL.csproj", "{133F549F-140D-4C7C-BF83-9BDC1F0C82F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.BLL", "NetCoreBackend.BLL\NetCoreBackend.BLL.csproj", "{133F549F-140D-4C7C-BF83-9BDC1F0C82F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.Core", "NetCoreBackend.Core\NetCoreBackend.Core.csproj", "{A8279BE7-66F4-417B-8F2B-1C8ED772851E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.Core", "NetCoreBackend.Core\NetCoreBackend.Core.csproj", "{A8279BE7-66F4-417B-8F2B-1C8ED772851E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.DAL", "NetCoreBackend.DAL\NetCoreBackend.DAL.csproj", "{6110974C-9D08-4EAC-B174-3D8969ECFC73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.DAL", "NetCoreBackend.DAL\NetCoreBackend.DAL.csproj", "{6110974C-9D08-4EAC-B174-3D8969ECFC73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.WebAPI", "NetCoreBackend.WebAPI\NetCoreBackend.WebAPI.csproj", "{258699C5-EF1F-49DE-A646-FFE03BC26414}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.WebAPI", "NetCoreBackend.WebAPI\NetCoreBackend.WebAPI.csproj", "{258699C5-EF1F-49DE-A646-FFE03BC26414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.Entities", "NetCoreBackend.Entities\NetCoreBackend.Entities.csproj", "{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.Entities", "NetCoreBackend.Entities\NetCoreBackend.Entities.csproj", "{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.Tests", "NetCoreBackend.Tests\NetCoreBackend.Tests.csproj", "{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
