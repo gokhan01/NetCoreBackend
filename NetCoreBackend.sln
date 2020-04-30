@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.WebAPI", "Ne
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBackend.Entities", "NetCoreBackend.Entities\NetCoreBackend.Entities.csproj", "{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.Tests", "NetCoreBackend.Tests\NetCoreBackend.Tests.csproj", "{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBackend.UnitTests", "NetCoreBackend.UnitTests\NetCoreBackend.UnitTests.csproj", "{E5ACF9D6-2B3A-413A-98C9-3946F2DB00DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B3CF8C-B4AE-4CD3-94CB-64EA650F4DE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D23B2F1-4A6E-47B5-B323-2D51B2390C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5ACF9D6-2B3A-413A-98C9-3946F2DB00DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5ACF9D6-2B3A-413A-98C9-3946F2DB00DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5ACF9D6-2B3A-413A-98C9-3946F2DB00DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5ACF9D6-2B3A-413A-98C9-3946F2DB00DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

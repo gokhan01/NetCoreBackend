@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace NetCoreBackend.Tests
+namespace NetCoreBackend.UnitTests
 {
     public class UnitTest1
     {

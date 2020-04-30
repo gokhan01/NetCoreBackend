@@ -33,11 +33,11 @@ namespace NetCoreBackend.BLL.Concrete
         [PerformanceAspect(5)]//5 sn.
         public IDataResult<List<Product>> GetList()
         {
-            Thread.Sleep(5 * 1000);
+            //Thread.Sleep(5 * 1000);
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }
 
-        //[SecuredOperation("Product.List,Admin")]
+        [SecuredOperation("Product.List,Admin")]
         [LogAspect(typeof(GrayLogLogger))]
         [CacheAspect(duration: 10)]
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
