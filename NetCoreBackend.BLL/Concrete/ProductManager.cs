@@ -1,4 +1,5 @@
-﻿using NetCoreBackend.BLL.Abstract;
+﻿using Microsoft.AspNetCore.Http;
+using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.BLL.BusinessAspects.Autofac;
 using NetCoreBackend.BLL.Constants;
 using NetCoreBackend.BLL.ValidationRules.FluentValidation;
@@ -14,15 +15,19 @@ using NetCoreBackend.DAL.Abstract;
 using NetCoreBackend.Entities.Concrete;
 using System.Collections.Generic;
 using System.Threading;
+using NetCoreBackend.Core.Extensions;
+using NetCoreBackend.Core.HttpContextAccessors;
 
 namespace NetCoreBackend.BLL.Concrete
 {
     public class ProductManager : IProductService
     {
-        private IProductDal _productDal;
-        public ProductManager(IProductDal productDal)
+        private readonly IProductDal _productDal;
+        private readonly IClaimAccessor _claimAccessor;
+        public ProductManager(IProductDal productDal, IClaimAccessor claimAccessor)
         {
             _productDal = productDal;
+            _claimAccessor = claimAccessor;
         }
 
         public IDataResult<Product> GetById(int productId)
@@ -30,9 +35,11 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(x => x.ProductId == productId));
         }
 
+        [SecuredOperation("Product.List,Admin")]
         [PerformanceAspect(5)]//5 sn.
         public IDataResult<List<Product>> GetList()
         {
+            var userId = _claimAccessor.GetUserId();
             //Thread.Sleep(5 * 1000);
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }

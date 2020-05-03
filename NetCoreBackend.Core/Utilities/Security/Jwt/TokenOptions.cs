@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NetCoreBackend.Core.Utilities.Security.Jwt
+﻿namespace NetCoreBackend.Core.Utilities.Security.Jwt
 {
     public class TokenOptions
     {

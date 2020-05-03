@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NetCoreBackend.BLL.Abstract;
 using NetCoreBackend.Entities.Concrete;
 
@@ -9,7 +8,7 @@ namespace NetCoreBackend.WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        IProductService _productService;
+        private readonly IProductService _productService;
         public ProductsController(IProductService productService)
         {
             _productService = productService;
