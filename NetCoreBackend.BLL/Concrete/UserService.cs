@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace NetCoreBackend.BLL.Concrete
 {
-    public class UserManager : IUserService
+    public class UserService : IUserService
     {
         IUserDal _userDal;
-        public UserManager(IUserDal userDal)
+        public UserService(IUserDal userDal)
         {
             _userDal = userDal;
         }

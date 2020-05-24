@@ -24,7 +24,7 @@ namespace NetCoreBackend.UnitTests.BLL
                 mock.Mock<IProductDal>().Setup(productDal => productDal.Get(x => x.ProductId == productId))
                     .Returns(new Product { ProductName = "Test" });
 
-                var productService = mock.Create<ProductManager>();
+                var productService = mock.Create<ProductService>();
 
                 var product = productService.GetById(1);
 

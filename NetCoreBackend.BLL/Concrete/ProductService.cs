@@ -20,11 +20,11 @@ using NetCoreBackend.Core.HttpContextAccessors;
 
 namespace NetCoreBackend.BLL.Concrete
 {
-    public class ProductManager : IProductService
+    public class ProductService : IProductService
     {
         private readonly IProductDal _productDal;
         private readonly IClaimAccessor _claimAccessor;
-        public ProductManager(IProductDal productDal, IClaimAccessor claimAccessor)
+        public ProductService(IProductDal productDal, IClaimAccessor claimAccessor)
         {
             _productDal = productDal;
             _claimAccessor = claimAccessor;
@@ -35,11 +35,11 @@ namespace NetCoreBackend.BLL.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(x => x.ProductId == productId));
         }
 
-        [SecuredOperation("Product.List,Admin")]
+        //[SecuredOperation("Product.List,Admin")]
         [PerformanceAspect(5)]//5 sn.
         public IDataResult<List<Product>> GetList()
         {
-            var userId = _claimAccessor.GetUserId();
+            //var userId = _claimAccessor.GetUserId();
             //Thread.Sleep(5 * 1000);
             return new SuccessDataResult<List<Product>>(_productDal.GetList());
         }

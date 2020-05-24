@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Autofac.Extras.DynamicProxy;
+using Castle.DynamicProxy;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,11 +16,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using NetCoreBackend.BLL.Abstract;
+using NetCoreBackend.BLL.Concrete;
+using NetCoreBackend.BLL.DependencyResolvers.Autofac;
 using NetCoreBackend.Core.DependencyResolvers;
 using NetCoreBackend.Core.Extensions;
+using NetCoreBackend.Core.Utilities.Interceptors;
 using NetCoreBackend.Core.Utilities.IoC;
 using NetCoreBackend.Core.Utilities.Security.Encryption;
 using NetCoreBackend.Core.Utilities.Security.Jwt;
+using NetCoreBackend.DAL.Abstract;
+using NetCoreBackend.DAL.Concrete.EntityFramework;
 
 namespace NetCoreBackend.WebAPI
 {
@@ -65,6 +75,11 @@ namespace NetCoreBackend.WebAPI
                 new CoreModule()
             });
         }
+
+        //public void ConfigureContainer(ContainerBuilder containerBuilder)
+        //{
+        //    containerBuilder.RegisterModule(new AutofacBusinessModule());
+        //}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

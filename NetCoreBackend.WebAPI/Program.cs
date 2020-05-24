@@ -21,11 +21,11 @@ namespace NetCoreBackend.WebAPI
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())//.net core DI ile beraber çalýþabilecek Autofac'in tanýmlanmasý
-            .ConfigureContainer<ContainerBuilder>(builder =>
-            {
-                builder.RegisterModule(new AutofacBusinessModule());//BLL katmanýnda oluþturulan Autofac business sýnýfý
-            })
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())//.net core DI ile beraber çalýþabilecek Autofac'in tanýmlanmasý
+                .ConfigureContainer<ContainerBuilder>(builder =>
+                {
+                    builder.RegisterModule(new AutofacBusinessModule());//BLL katmanýnda oluþturulan Autofac business sýnýfý
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

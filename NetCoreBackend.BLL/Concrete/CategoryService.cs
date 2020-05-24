@@ -7,10 +7,10 @@ using System.Collections.Generic;
 
 namespace NetCoreBackend.BLL.Concrete
 {
-    public class CategoryManager : ICategoryService
+    public class CategoryService : ICategoryService
     {
         ICategoryDal _categoryDal;
-        public CategoryManager(ICategoryDal categoryDal)
+        public CategoryService(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
         }
